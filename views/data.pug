@@ -1,0 +1,15 @@
+html
+    head
+        title DatacordAnalytics - Data display
+    body
+        if (data && typeof data === "object")
+            h1 Start date: #{data.start} |
+            h1 End date: #{data.end} |
+            h1 Duration: #{data.duration}ms
+            ul
+                |
+                each key in Object.entries(data.sortedEventsObject)
+                    li #{key[0]}: #{key[1]}
+        else
+            h1 No data to display, returns to the main page here:
+            a(href="/") Home
